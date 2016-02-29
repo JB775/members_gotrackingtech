@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
-gem 'rails', '4.2.4'
+ruby '2.2.4'
+gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -22,6 +22,7 @@ gem 'payola-payments'
 gem 'pg'
 gem 'puma'
 gem 'sucker_punch', '~> 1.6'
+gem 'pry-byebug'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
