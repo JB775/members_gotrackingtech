@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
   <li><%= link_to 'Preferences', edit_user_registration_path%></li>
   <li><%= link_to 'Dashboard', edit_user_registration_path, class:'blue_link' %></li>
-  <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete', class:'logoutnav btn btn-primary navbar_login_button fa fa-copyright' %></li>
+  <li><%= link_to ' Logout', destroy_user_session_path, :method=>'delete', class:'logoutnav btn btn-primary navbar_login_button fa fa-sign-out' %></li>
 <% else %>
-  <li><%= link_to 'Sign Up', new_user_registration_path, data: { no_turbolink: true }, class:'blue_link' %></li>
-  <li><%= link_to 'Login', new_user_session_path, class:'btn btn-primary navbar_login_button' %></li>
+  <li><a href="/users/sign_up" class="blue_link fa fa-user-plus">&nbsp;New&nbsp;User</a></li>
+  <li><%= link_to ' Login', new_user_session_path, class:'btn btn-primary navbar_login_button fa fa-sign-in' %></li>
 
 
 <% end %>

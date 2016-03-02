@@ -12,6 +12,7 @@ html, body, main {
 main {
 	background-color: white;
   margin-top: 67px;
+  padding: 8px 0px 75px 0px;
 }
 
 /*  Main Navbar  */
@@ -30,6 +31,20 @@ main {
 
 .navbar_login_button:hover {
   background-color: #025aa5 !important;
+}
+
+.pricing_button {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.pricing_button:hover {
+  background-color: #449d44;
+  border-color: #419641;
+}
+
+.fa:hover {
+  color: #FFF;
 }
 
 @media (max-width: 767px) { 
