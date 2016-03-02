@@ -1,0 +1,77 @@
+
+<head>
+	<%= stylesheet_link_tag    'application-dashboard', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application-dashboard', 'data-turbolinks-track' => true %>
+	<title>GoTrackingTech</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<style>
+		html, body, #map {
+			height: 100%;
+			margin: 0px;
+			padding: 0px
+		}
+	</style>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry"></script>
+	<script>
+		function initialize() {
+			var map = new google.maps.Map(document.getElementById("map"), {
+			  center: {lat: pathCoords[0].lat, lng: pathCoords[0].lng},
+			  zoom: 10,
+			  mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+			
+			autoRefresh(map);
+		}
+		function moveMarker(map, marker, latlng) {
+			marker.setPosition(latlng);
+			//map.panTo(latlng);
+		}
+		function autoRefresh(map) {
+			var i, route, marker;
+			
+			route = new google.maps.Polyline({
+				path: [],
+				geodesic : true,
+				strokeColor: '#0000FF',
+				strokeOpacity: 0.4,
+				strokeWeight: 6,
+				editable: false,
+				map:map
+			});
+			
+			marker=new google.maps.Marker({map:map,icon:"http://maps.google.com/mapfiles/ms/micons/blue.png"});
+			for (i = 0; i < pathCoords.length; i++) {
+				setTimeout(function (coords)
+				{
+					var latlng = new google.maps.LatLng(coords.lat, coords.lng);
+					route.getPath().push(latlng);
+					moveMarker(map, marker, latlng);
+				}, 200 * i, pathCoords[i]);
+			}
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+
+		var pathCoords = [];
+        function buildMarkersArray() {
+            var arrayLength = <%= @coordArray.length %>;
+
+           for (var i = 0; i < arrayLength; i++) {
+            <% for i in 0..@coordArray.length-1 %>
+              var thisObj = {
+                lat: <%= @coordArray[i][:lat] %>,
+                lng: <%= @coordArray[i][:lng] %>
+              };
+
+              pathCoords.push(thisObj);
+              <% end %>
+           };
+        };
+        buildMarkersArray();
+
+	</script>
+</head>
+<body>
+	<div id="map"></div>
+</body>

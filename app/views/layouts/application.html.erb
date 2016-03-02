@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Rails Stripe Membership" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Stripe Membership" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "GoTrackingTech | 2016" %></title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Go Tracking Technologies" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -17,5 +18,27 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <div class="non_dashboard">
+      <br>
+      <br>
+      <footer class="container marketing">
+        
+        <p class="wow fadeInLeft">
+          <i class="fa fa-copyright"></i> 2016 GoTrackingTech, LLC &#124;
+            <a href="/privacy">Privacy</a> &#124;
+            <a href="/privacy">Terms</a> &#124;
+            <a href="/contact">Careers</a> &#124;
+            <a href="/contact">Contact</a> &#124;
+            <a href="http://www.facebook.com"><%=image_tag 'facebook.png', class: 'social_icon' %></a> &#124;
+            <a href="http://www.twitter.com/gotrackingtech"><%=image_tag 'twitter.png', class: 'social_icon' %></a> &#124;
+            <a href="http://www.instagram.com/gotrackingtech"><%=image_tag 'instagram.png', class: 'social_icon' %></a> 
+            <a href="#" class="pull-xs-right hide_small">Back to top &nbsp;<i class="fa fa-arrow-circle-up"></i></a>
+        </p>
+    
+      </footer>
+    </div>
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>

@@ -13,5 +13,12 @@
 //= require jquery
 //= require payola
 //= require jquery_ujs
+//= require wow
 //= require bootstrap-sprockets
 //= require_tree .
+
+// $(document).ready(function() {
+//     $('#myCarousel').carousel({
+//     //options here
+//     });
+// });
