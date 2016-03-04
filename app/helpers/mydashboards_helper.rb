@@ -1,0 +1,2 @@
+module MydashboardsHelper
+end

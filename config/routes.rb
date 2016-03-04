@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   get "content/silver"
   get "content/gold"
   get "content/platinum"
@@ -19,9 +21,13 @@ Rails.application.routes.draw do
   get 'pricing', :to => 'visitors#pricing'
   get 'privacy', :to => 'visitors#privacy'
   get 'testing', :to => 'visitors#testing'
-  get 'dashboard', :to => 'visitors#dashboard'
+  # get 'dashboard', :to => 'visitors#dashboard'
   get 'map', :to => 'visitors#map'
   get 'routehistory', :to => 'visitors#routehistory'
   get 'show', :to => 'visitors#show'
+
+    # Dashboard Pages
+  get 'dashboard', :to => 'mydashboards#dashboard'
+
 
 end

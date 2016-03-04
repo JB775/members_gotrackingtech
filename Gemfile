@@ -25,6 +25,7 @@ gem 'pg'
 gem 'puma'
 gem 'sucker_punch', '~> 1.6'
 gem 'pry-byebug'
+gem 'bootstrap_sb_admin_base_v2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
